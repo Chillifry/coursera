@@ -7,14 +7,16 @@ body {
   font-family: Helvetica;
 }
 
-h1 {
-  margin-bottom: 15px;
+.header {
+  margin-bottom: 45px;
   position: relative;
+  text-align: center;
 }
 
 .text {
   position: relative;
-  margin-top: 50px;
+  margin-top: 70px;
+  overflow: hidden;
 }
 
 #p1, #p2, #p3 {
