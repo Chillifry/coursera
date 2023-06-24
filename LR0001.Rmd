@@ -1,0 +1,352 @@
+"hello world!"
+5 + 5
+plot(1:10)
+5
+10
+15
+25
+
+name <- "Melissa"
+print(name)
+
+value <- "plus"
+paste("R is ", value)
+
+name <- "Rose"
+paste("Magenta for", name)
+
+#paste combines two values nested in variables which could be strings
+value <- "addition"
+devalue <- "subtraction"
+paste(value, devalue)
+
+#paste cannot combine a str and a number
+num1 <- 15
+num2 <- 10
+num1 + num2
+
+#R allows the same value assigned to multiple variables
+num1 <- num2 <- num3 <- "blueberries"
+
+#in R, we use 'class' to define the data type
+x <- 10.5
+class(x)
+
+y <- x / 2i
+class(y)
+
+a <- 25
+class(a)
+
+b <- "this is a test"
+class(b)
+
+m <- TRUE
+class(m)
+
+n <- 25L
+class(n)
+
+a <- 25i * m
+class(a)
+
+b <- 24
+class(b)
+
+c <- "this is a statement"
+class(c)
+
+d <- 35L
+class(d)
+
+e <- false
+class(e)
+
+e <- FALSE
+class(e)
+
+x = 4.6
+y = 6
+class(x)
+class(y)
+
+a <- 51L
+class(a)
+
+b <- 25i-5
+class(b)
+
+c <- 21L
+class(c)
+
+d <- 35i
+class(d)
+
+x <- 1L
+class(x)
+
+y <- 89i
+class(y)
+
+a <- 89i + 4
+class(a)
+
+x <- 1L
+y <- 2
+
+#convert from one type to another with this function:
+as.numeric(x)
+
+#Built-In Math Functions
+min(2, 7, 3)
+max(25, 100, 5978)
+
+#square root of a number
+sqrt(19.5) 
+
+#absolute positive value of a number
+abs(-8.75)
+
+#ceiling() rounds a number to the closets highest integer
+#floor() rounds a number to its closest lowest integer
+ceiling(7.24)
+floor(4.68)
+
+#to find the number of characters in a string
+str <- "This is a string"
+nchar(str)
+
+#combine two strings
+a <- "Hello"
+b <- ", World!"
+paste(a, b)
+
+#use the cat function without the 'escape characters'
+#str escape characters
+str <- "We are the so-called \"Vikings\", from the north."
+cat(str)
+
+str <- \"Rudy\\" return to the north pole.
+cat(str)
+
+str <- "R is the mathematician\r programming conundrum"
+cat(str)
+
+a <- 9
+b <- 10
+
+if (b > a) {
+  print ("b is greater than a")
+  } else {
+  print("b is not greater than a")
+}
+
+#while loop executes a set of statements IF a condition is TRUE:
+
+#break statements are used even if the if condition evaluates to TRUE:
+i <- 1
+while (i < 6) {
+  print(i)
+  i <- i+1
+  if (i == 4) {
+  break 
+  }
+}
+
+x <- 1
+if (x < 10) {
+  print(x)
+  x <- x + 1
+  if(x == 9){
+    break
+  }
+}
+
+i <- 0
+if (i < 6) {
+  i <- i + 1
+  if (i == 3) {
+    next
+  }
+  print(i)
+}
+
+dice <- 1
+while (dice <= 6) {
+  if (dice < 6) {
+   print("no Yahtzee")
+  } else {
+   print("Yahtzee")
+  }
+  dice <- dice + 1
+}
+
+puck <- 1
+while (puck <= 6) {
+  if (puck < 6) {
+    print("No Yahtzee")
+  } else {
+    print("Yahtzee")
+  }
+  puck <- puck + 1
+}
+
+for (x in 1:10) {
+  print(x)
+}
+
+#for loop is used for iterating over a sequence:
+
+fruit <- list("apple", "banana", "cherry")
+for (x in fruit) {
+  if (x == "cherry") {
+    next
+  }
+  print(fruit)
+}
+
+#Print each item in a list
+fruit <- list("apple", "banana", "cherry")
+
+for (x in fruit) {
+  print(x)
+}
+
+dice <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+for (x in dice) {
+  print(x)
+}
+
+#using the 'next' statement
+fruits <- list("apple", "banana", "cherry")
+for (x in fruits) {
+  if (x == "banana") {
+    next
+  }
+  print(x)
+}
+
+dice <- 1:6
+for (x in dice) {
+  if (x == 6) {
+    print(paste("The dice number is", x, "Yahtzee!"))
+  } else {
+    print(paste("The dice number is", x, "Not Yahtzee!"))
+  }
+}
+
+#Nested Loops
+adj <- list("red", "big", "tasty")
+
+fruit <- list("apple", "banana", "cherry")
+  for (x in adj) {
+    for (y in fruits) {
+      print(paste(x, y))
+  }
+}
+
+#Function() in R
+my_function <- function() {
+  print("Hello World!")
+}
+
+my_function <- function() {
+  print("Hello World!")
+}
+
+my_function()
+
+my_function <- function(fname) {
+   paste(fname, "Griffin")
+}
+my_function("Rob")
+my_function("Lois")
+my_function("Brad")
+
+my_function <- function(country = "Norway") {
+  paste("I am from", country)
+}
+my_function("India")
+my_function("USA")
+my_function("Norway")
+
+#Return value on a function
+my_function <- function(x) {
+  return (5 * x)
+}
+print(my_function(1))
+print(my_function(5))
+print(my_function(9))
+
+#Nested function
+nested_function <- function(x, y) {
+  a <- x + y
+  return(a)
+}
+nested_function(nested_function(2, 2), nested_function(3, 3))
+
+nested_function <- function(x, y) {
+  a <- x * y
+  return(a)
+}
+nested_function(nested_function(2, 4), nested_function(5, 10))
+
+#function within a function
+#You cannot directly call the function because the #Inner_func has been defined (nested) inside the Outer_func.
+#We need to call Outer_func first in order to call #Inner_func as a second step.
+#We need to create a new variable called output and give it a value, which is 3 here.
+#We then print the output with the desired value of "y", which in this case is 5.
+#The output is therefore 8 (3 + 5).
+
+outer_func <- function(x) {
+  inner_func <- function(y) {
+     a <- x + y
+     return(a)
+  }
+  return (inner_func)
+}
+output <- outer_func(3)
+output(5)
+
+outer_func <- function(x) {
+  inner_func <- function(y) {
+    a <- x + y
+    return(a)
+  }
+   return (inner_func)
+}
+output <- outer_func(9)
+output(10)
+
+#RECURSION
+tri_recursion <- function(k) {
+  if (k > 0) {
+    result <- k + tri_recursion(k - 1)
+    print(result)
+  } else {
+    result = 0
+    return(result)
+  }
+}
+tri_recursion(6)
+
+#Global variables
+txt <- "awesome"
+my_function <- function() {
+  paste("R is", txt)
+}
+my_function()
+
+#Global and local variable
+txt <- "global variable"
+
+my_function <- function() {
+  txt = "fantastic"
+  paste("R is", txt)
+}
+
+my_function()
+#print txt
+txt 
+

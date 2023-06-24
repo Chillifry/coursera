@@ -1,0 +1,60 @@
+---
+title: "NYPD-Covid19-DataSets-report"
+author: "Melissa DeSilva"
+date: "2023-06-14"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# data URL from github, Johns Hopkins data set
+url_in <- https://github.com/CSSEGISandData/COVID-19/tree/master/archived_data/archived_time_series
+
+# pulled filenames
+file_names <-
+c("time_series_19-covid-Confirmed_archived_0325.csv", 
+"time_series_19-covid-Deaths_archived_0325.csv",
+
+"time_series_19-covid-Recovered_archived_0325.csv",
+
+"time_series_2019-ncov-Confirmed.csv", 
+
+"time_series_2019-ncov-Deaths.csv",
+
+"time_series_2019-ncov-Recovered.csv")
+urls <- str_c(url_in, file_names)
+
+#Let's read in the data and see what we have.
+
+'''{r import_data, message = FALSE}
+global_cases <- read_csv(urls[1])
+global_deaths <- read_csv(urls[2])
+US_cases <- read_csv(urls[3])
+US_deaths <- read_csv(urls[4])
+
+#current data has to begin in the same way
+url_in <- c"https://data.cityofnewyork.us/api/views/833y-fsy8/rows.csv?accessType=DOWNLOAD"
+
+
